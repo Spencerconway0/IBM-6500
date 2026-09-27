@@ -1,0 +1,94 @@
+---
+title: "M05 | Visualizing Data with Tables for MSDM CEP"
+author: "Spencer Conway"
+date: today
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    number-sections: true
+    code-link: true
+    code-fold: true
+    code-tools: true
+    code-overflow: scroll
+    embed-resources: true
+editor: visual
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: auto
+---
+
+# What I learned about tables
+
+One thing that stood out to me in the videos was how much the small formatting choices affect a table. The Tom Mock video showed the different parts of a `gt` table, like the header, column labels, body, stub, and footer. I had not really thought about the stub head before. The conversation about table design also made sense to me. You should separate the header from the data, use dividers only where they help, left-align text, and right-align numbers so values are easier to compare. I also learned that more decimal places do not automatically make a table better. For my CEP, I would want to group Instagram posts by content type and show only the measures that help answer our engagement question.
+
+What I liked about `gt` was seeing how a plain summary could become something I would actually put on a slide. The video went through practical steps like adding a title and subtitle, changing labels, formatting currency, adding a source note, and adjusting borders. `gtExtras` was interesting because it can add themes and small visuals, such as sparklines or distribution plots, inside the table. I used a small bar in my practice table because it helps me spot the larger categories without losing the exact numbers.
+
+Charts are usually faster for spotting a broad pattern or trend. A table complements a chart when the reader also needs exact values, such as how many posts were published or the engagement rate for each content type. I would choose a table when there are only a few categories, precise comparisons matter, and I want to show more than one measure at once. If I had many dates or wanted to emphasize change over time, I would probably lead with a chart and use a small table for the key numbers.[^1]
+
+[^1]: For my RKR project, I would define the engagement-rate denominator explicitly before comparing post types; reach-based and follower-based rates answer different questions.
+
+# Practice table for my analytics objective
+
+The practice question is: Which pizza category contributes the most sales and revenue? Category plays the role that content type will play in my RKR analysis. Each row in this dataset represents one pizza sold, so `n()` counts pizzas rather than distinct customer orders.
+
+```{r}
+#| label: tbl-category
+#| tbl-cap: "Practice summary of pizza sales by category"
+library(dplyr)
+library(gt)
+library(gtExtras)
+
+category_summary <- gt::pizzaplace |>
+  group_by(type) |>
+  summarise(
+    pizzas_sold = n(),
+    revenue = sum(price, na.rm = TRUE),
+    average_price = mean(price, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  mutate(sales_share = 100 * pizzas_sold / sum(pizzas_sold)) |>
+  arrange(desc(revenue)) |>
+  mutate(sales_bar = sales_share)
+
+category_summary |>
+  gt(rowname_col = "type") |>
+  tab_header(
+    title = "Which pizza categories drive sales?",
+    subtitle = "A practice example for the RKR content-type comparison"
+  ) |>
+  tab_stubhead(label = "Pizza category") |>
+  tab_spanner(label = "Sales performance", columns = c(pizzas_sold, revenue, average_price)) |>
+  tab_spanner(label = "Share of pizzas sold", columns = c(sales_share, sales_bar)) |>
+  cols_label(
+    pizzas_sold = "Pizzas sold",
+    revenue = "Total revenue",
+    average_price = "Average price",
+    sales_share = "Share (%)",
+    sales_bar = "Relative share"
+  ) |>
+  fmt_number(columns = pizzas_sold, decimals = 0) |>
+  fmt_number(columns = sales_share, decimals = 2) |>
+  fmt_currency(columns = c(revenue, average_price), currency = "USD", decimals = 2) |>
+  data_color(columns = revenue, palette = c("#f3f7fa", "#74a9c7")) |>
+  gtExtras::gt_plt_bar(column = sales_bar, color = "#23577a", scale_type = "number", width = 80) |>
+  tab_footnote(
+    footnote = "Share of pizzas sold equals category pizzas divided by all pizzas, multiplied by 100.",
+    locations = cells_column_labels(columns = sales_share)
+  ) |>
+  tab_source_note(source_note = "Source: gt::pizzaplace (synthetic pizza sales data); calculations by Spencer Conway.") |>
+  tab_options(table.font.size = px(14), heading.title.font.size = px(21))
+```
+
+## RKR Application
+
+This format would be useful for the RKR presentation because it puts an exact number next to a visual cue. Once we receive Instagram Insights data, I can replace pizza category with content type and summarize posts, reach, interactions, and a clearly defined engagement rate. A stakeholder could quickly see which format performed well and how much content we actually posted in that format. I would be careful about claiming that the content type *caused* higher engagement: posting dates, paid promotion, audience size, and the topic could also matter.
+
+# Appendix
+
+-   [GitHub ](https://github.com/)[repository](https://github.com/Spencerconway0/IBM-6500.git)[ ](https://github.com/)
+-   [Published HTML report ](https://pages.github.com/)
