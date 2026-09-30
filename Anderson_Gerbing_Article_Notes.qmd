@@ -142,5 +142,5 @@ Anderson, James C., and David W. Gerbing. 1988. “Structural Equation Modeling 
 
 # Appendix
 
-(https://github.com/spencerconway0)
+https://github.com/Spencerconway0/IBM-6500
 
