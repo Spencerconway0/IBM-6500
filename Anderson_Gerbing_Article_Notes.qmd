@@ -1,0 +1,146 @@
+---
+title: "Article Notes: The Two-Step Approach to Structural Equation Modeling"
+author: "Spencer Conway"
+date: "2026-09-28"
+format:
+  html:
+    toc: true
+    number-sections: true
+    embed-resources: true
+---
+
+# Introduction
+
+- Anderson and Gerbing (1988): guidance for using SEM to test theory
+- Main idea → check measurement first, then relationships between constructs
+- Observed indicators = things like survey responses; latent constructs = ideas like trust or satisfaction
+- Measurement model: do the items measure the intended construct?
+- Structural model: do the proposed relationships between constructs hold up?
+
+# Background
+
+## Exploratory Versus Confirmatory Analyses
+
+- Exploratory → look for possible factor structure
+- Confirmatory → start with a structure based on theory, then check fit
+- More of a progression; revising a confirmatory model adds an exploratory part
+- Changes based on the same sample can pick up sample-specific patterns
+- Stronger check: test the revised model with a new sample
+
+## Complementary Approaches for Theory Testing Versus Predictive Application
+
+- Theory testing: ML or GLS with a common-factor model
+- Common-factor approach → separate measurement error from the construct; test overall fit
+- Prediction: authors discuss PLS, emphasizing explained variance and component scores
+- Choice depends on the research goal
+- Article mainly focused on ML/GLS for confirmatory theory testing
+
+## Estimation Methods
+
+- ML → estimate parameters that reproduce the observed covariance patterns
+- Distribution assumptions matter for standard errors and chi-square tests
+- Parameter estimates may hold up better than the tests under moderate nonnormality
+- Alternatives for nonnormal data available, but larger samples may be needed
+- Fit results depend partly on the data and estimation method
+
+# Confirmatory Measurement Model
+
+- Specify which indicators belong to each latent construct
+- Constructs allowed to correlate freely; proposed structural paths come later
+- Each indicator includes error → survey responses are imperfect measures
+
+## Need for Unidimensional Measurement
+
+- Unidimensionality → one underlying idea measured by a set of indicators
+- Several ideas mixed together = unclear construct meaning
+- Internal consistency: relationships among items within a set
+- External consistency: how those items relate to indicators outside the set
+- Clear measurement needed before interpreting relationships between constructs
+
+## Specification
+
+- Decide indicator-to-construct relationships in advance using theory and item meaning
+- Identification → enough information to estimate the parameters
+- Consider scale setting, number of indicators, and measurement errors
+- Cross-loadings/correlated errors need a reason; can change the construct's meaning
+
+## Assessment of Fit
+
+- Chi-square → compare model-predicted covariances with observed covariances
+- Also check other fit information; chi-square sensitive to sample size
+- Residuals → relationships the model explains poorly
+- Check loadings, standard errors, and whether estimates make sense
+- Convergent validity → indicators of the same construct come together
+- Discriminant validity → different constructs can be distinguished
+- Good overall fit alone doesn't guarantee good measurement
+
+## Respecification
+
+- Weak fit → inspect items, residuals, and theory before making changes
+- Possible changes: remove weak indicator or rethink a specified relationship
+- Chasing better statistics can overfit the sample
+- Revisions need a theoretical reason; test with new data when possible
+- Fix measurement first so structural paths aren't covering up item problems
+
+# One-Step Versus Two-Step Modeling Approaches
+
+## The Confirmatory Structural Model
+
+- Add proposed relationships among latent constructs
+- Example: awareness → intention to visit
+- Theory places restrictions on which paths are included
+- Interpretational confounding → construct meaning shifts when structural paths change
+- Watch for noticeable changes in indicator loadings across structural models
+
+## Recommended Two-Step Modeling Approach
+
+### Step 1: Measurement Model
+
+- Check whether indicators measure the intended constructs
+- Let constructs correlate freely; don't impose theoretical paths yet
+- Check unidimensionality, convergent validity, discriminant validity, and fit
+- Poor fit → examine measurement choices and make defensible revisions
+- Need acceptable measurement before testing the structural theory
+
+### Step 2: Structural Model
+
+- Keep the established measurement structure; estimate the full model with proposed paths
+- Test restrictions on relationships between constructs
+- Compare fit with the freely correlated measurement model
+- Nomological validity → constructs relate as expected within the theory
+- Bad measurement would make these path results hard to interpret
+
+### Nested Models and Difference Tests
+
+- Nested models → more restricted model's free parameters are a subset of the less restricted model's
+- Authors compare a series: null, more constrained alternative, proposed theory, less constrained alternative, and saturated structural model
+- Saturated structural model equivalent to the freely correlated measurement model
+- Chi-square difference test → difference in chi-square values, using difference in degrees of freedom
+- Sequential tests → check whether added restrictions significantly worsen fit
+- Main question: does the proposed theory explain construct relationships well enough? Does a reasonable alternative do better?
+
+## Advantages of the Two-Step Approach
+
+- Easier to locate poor fit → measurement problem vs. structural-path problem
+- Good fit in one part can't hide poor fit in the other
+- Less interpretational confounding → construct meaning more stable across models
+- Clear baseline for comparing the theory with alternatives
+- Missing paths also provide theoretical information
+- Adding every possible path may improve fit but weakens the theory test
+
+
+# Conclusion
+
+- Main takeaway → define and check constructs before interpreting their relationships
+- Measurement quality affects the meaning of structural paths
+- Two steps: acceptable measurement → test theory → compare alternatives
+- Fit statistics help, but theory and careful interpretation still needed
+
+# References
+
+Anderson, James C., and David W. Gerbing. 1988. “Structural Equation Modeling in Practice: A Review and Recommended Two-Step Approach.” *Psychological Bulletin* 103 (3): 411–423. https://doi.org/10.1037/0033-2909.103.3.411.
+
+# Appendix
+
+(https://github.com/spencerconway0)
+
