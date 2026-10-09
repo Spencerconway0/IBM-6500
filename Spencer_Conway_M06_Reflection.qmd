@@ -1,0 +1,171 @@
+---
+title: "M06-Reflection Essay-Advanced Data Wrangling"
+author: "Spencer Conway"
+date: "2026-10-08"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 4
+    toc-expand: 2
+    number-sections: true
+    code-link: true
+    embed-resources: true
+    code-fold: true
+    code-summary: "Show R code"
+    code-tools: true
+    code-copy: true
+    code-overflow: scroll
+    html-math-method: plain
+editor: visual
+execute:
+  freeze: auto
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(dplyr)
+library(tidyr)
+library(knitr)
+```
+
+# Reveal.js
+
+## Step 1
+
+1.  In **Step 1**, you learned how to design stunning presentation slides with Quarto. What's your impression of the Revealjs presentation? Describe its capabilities as you learned from the presentations. What are its strengths and weaknesses compared with PPT?
+
+My impression of Reveal.js is that it is a useful option for presenting work that includes data or code. I like that the slide content and settings can stay in the same Quarto file. The YAML header controls the theme and other options, while headings separate the slides. It takes more setup than PowerPoint at first, but feels managable once I get to know the system better.
+
+The workshop showed features such as incremental lists, slide transitions, navigation menus, zoom, speaker notes, and a chalkboard for live annotations. It also covered custom SCSS styling and Multiplex, which can synchronize the audience's slides with the presenter. These features could help with presenting a project and answering questions during a discussion.
+
+::: panel-tabset
+### Strengths
+
+-   I can use R code to make charts and tables.
+
+-   The slides can all use the same style.
+
+-   I can share the presentation online.
+
+-   I can update the data and render it again to update the results.
+
+### Weaknesses
+
+-   The code and settings take some time to learn.
+
+-   Moving text and pictures around is easier in PowerPoint.
+
+-   Sometimes the file has errors when I try to render it.
+
+-   Some features take more work to set up.
+:::
+
+I would still use PowerPoint for a presentation where I need to move a lot of images and text around quickly. I would use Reveal.js for an analysis presentation that needs updated charts, tables, or code examples. For my coursework, being able to connect the analysis to the presentation is the biggest benefit.
+
+# Step 2
+
+1.  In **Step 2**, you were asked to create a Revealjs presentation. **Provide a link to the presentation you published on the web**. 
+
+    1.  Add at least one reproducible chart or table in the presentation.
+
+    2.  Briefly describe what the presentation is about.
+
+    3.  What did you learn from the experience of the Revealjs presentation? 
+
+<https://spencerconway0.github.io/IBM-6500/Spencer_Conway_Quarto_Presentation.html#/title-slide>
+
+## Content and reproducibility
+
+My presentation summarizes the CCIDM workshop on Quarto and Reveal.js. It covers basic slide setup, ways to organize content, audience engagement features, and custom styling. It also includes how I could use Quarto for my RKR Instagram project.
+
+The presentation includes an R-generated table of the four main workshop sections. The code stores each section's start and end time in seconds, subtracts the start from the end, and converts the result to minutes. This makes the table reproducible because the calculations run when the file renders. The times come from the workshop summary, so the durations represent those listed sections rather than the entire recording.
+
+## What I learned
+
+Making the presentation helped me understand the difference between the source file and the finished output. The `.qmd` file contains the content and settings, while the HTML file is what the audience opens. I also learned that the filename matters when sharing the presentation because it becomes part of the GitHub Pages link.
+
+Adding a reproducible table showed me how Quarto connects code with a presentation. If I change a timestamp and render again, the duration updates automatically. I could use the same idea for RKR by generating tables from Instagram data once we have access to the actual results. I would still need to check the data and calculations before treating the output as a project finding.
+
+# Step 3
+
+1.  My advanced wrangling lecture in **Step 3** introduced new concepts, including how to join relational databases. Pick three different functions, each from a different category.  Describe when to use them and give one coding example along with an output for each function. To clarify, you are expected to do literate programming to weave your narratives with the code.
+
+I chose functions for joining tables, reshaping data, and creating calculated columns. The examples use small, made-up Instagram datasets so I can connect the functions to my RKR project.
+
+## Joining: `left_join()`
+
+I would use `left_join()` when related information is stored in two tables and I want to keep every row from the first table. For example, one Instagram table might contain the post format, while another contains performance measures. A shared `post_id` connects the matching records.
+
+```{r}
+#| label: tbl-joined
+#| tbl-cap: "Post information joined with available performance data"
+posts <- tibble(
+  post_id = c(101, 102, 103),
+  format = c("Image", "Reel", "Carousel")
+)
+
+performance <- tibble(
+  post_id = c(101, 102),
+  reach = c(1000, 2000),
+  interactions = c(60, 180)
+)
+
+joined_posts <- left_join(posts, performance, by = "post_id")
+knitr::kable(joined_posts)
+```
+
+@tbl-joined keeps all three posts. Post 103 has `NA` for reach and interactions because it has no matching performance record. That tells me information is missing. It does not mean the post had zero reach. I also need to check that the join key is unique where expected because duplicate matches can create extra rows.
+
+## Reshaping: `pivot_longer()`
+
+I would use `pivot_longer()` when several columns represent different measurements and I need them organized into one measurement column. This is useful for plotting or summarizing exported data. In this example, likes and comments start in separate columns.
+
+```{r}
+#| label: tbl-long
+#| tbl-cap: "Likes and comments reshaped into long format"
+wide_data <- tibble(
+  post_id = c(101, 102),
+  likes = c(40, 120),
+  comments = c(20, 60)
+)
+
+long_data <- pivot_longer(
+  wide_data,
+  cols = c(likes, comments),
+  names_to = "metric",
+  values_to = "count"
+)
+knitr::kable(long_data)
+```
+
+In @tbl-long, each post now has one row for likes and another for comments. The values stay the same, but the structure changes from two rows to four. I could use this format to compare the metrics in a chart without writing separate plotting instructions for every column.
+
+## Calculating: `mutate()`
+
+I would use `mutate()` to create a new column from values already in the dataset. For Instagram analysis, a calculated rate can help compare posts with different amounts of reach. Here, I calculate engagement rate by reach and round it to one decimal place.
+
+```{r}
+#| label: tbl-rates
+#| tbl-cap: "Engagement rates calculated from practice data"
+engagement_data <- tibble(
+  post_id = c(101, 102),
+  reach = c(1000, 2000),
+  interactions = c(60, 180)
+)
+
+engagement_rates <- mutate(
+  engagement_data,
+  engagement_rate_pct = round(interactions / reach * 100, 1)
+)
+knitr::kable(engagement_rates)
+```
+
+@tbl-rates shows a 6% rate for post 101 and a 9% rate for post 102. The second post has both more interactions and a higher rate in this example. In an actual analysis, I would check missing values and zero reach before calculating rates. I would also use the same definition of interactions across posts so the comparison makes sense.
+
+## Reflection
+
+These functions solve different problems. `left_join()` brings related information together, `pivot_longer()` changes the layout, and `mutate()` creates a measure I can analyze. Understanding the purpose of each function helps me decide what needs to happen before I make a chart or draw a conclusion. I still need practice with the syntax, but connecting each function to a small example makes it easier to understand the output.
