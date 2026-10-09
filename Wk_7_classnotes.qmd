@@ -35,3 +35,7 @@ editor: visual
 -   Talked about different factors that go into releveacne of a survey.
 
 -   Show old example of coffee shop
+
+Appendix \
+\
+<https://spencerconway0.github.io/IBM-6500/Wk_7_classnotes.html>
