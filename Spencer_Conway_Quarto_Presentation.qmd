@@ -1,0 +1,121 @@
+---
+title: "Presentations with Quarto"
+subtitle: "CCIDM Workshop Overview"
+author: "Spencer Conway"
+institute: "Cal Poly Pomona"
+format:
+  revealjs:
+    theme: simple
+    slide-level: 2
+    slide-number: true
+    transition: fade
+    background-transition: fade
+    menu: true
+    progress: true
+    controls: true
+    center: false
+    width: 1280
+    height: 720
+    margin: 0.08
+    embed-resources: true
+    html-math-method: plain
+    title-slide-attributes:
+      data-background-color: "#123e35"
+    include-in-header:
+      text: |
+        <style>
+        :root { --r-main-font: Arial, sans-serif; --r-heading-font: Arial, sans-serif; --r-main-font-size: 34px; --r-main-color: #25352f; --r-heading-color: #123e35; --r-link-color: #246450; --r-selection-background-color: #d7e8df; }
+        .reveal h1 { font-size: 2.25em; font-weight: 700; }
+        .reveal h2 { font-size: 1.45em; font-weight: 700; border-bottom: 5px solid #c5a65a; padding-bottom: 18px; margin-bottom: 32px; }
+        .reveal p, .reveal li { line-height: 1.4; }
+        .reveal li { margin-bottom: 17px; }
+        .reveal pre { font-size: 0.72em; box-shadow: none; border: 1px solid #d4ddd8; padding: 16px; }
+        .reveal .small { font-size: 0.66em; color: #56645d; }
+        .reveal .subtitle { font-size: 1.1em; }
+        .reveal #title-slide { text-align: left; padding-top: 85px; }
+        .reveal #title-slide h1, .reveal #title-slide p, .reveal #title-slide .quarto-title-author-name, .reveal #title-slide .quarto-title-affiliation { color: #fff; }
+        .reveal #title-slide .subtitle { color: #dfc778; }
+        .reveal .slide-number { background: none; color: #65766e; }
+        .reveal table { font-size: 0.82em; width: 100%; }
+        .reveal table th, .reveal table td { padding: 16px 14px; }
+        </style>
+---
+
+## Workshop overview
+
+-   Hosted by the **Center for Customer Insights and Digital Marketing** at Cal Poly Pomona.
+-   Jared Griffin explains how to create slides with Quarto and Reveal.js.
+-   The workshop covers slide setup, presentation tools, and custom styling.
+
+## Starting with Quarto
+
+-   A `.qmd` file holds the slide content and settings.
+-   The **YAML header** controls the presentation format and appearance.
+-   Markdown makes it easy to add headings, lists, and links.
+-   Rendering turns the file into an HTML slide presentation.
+
+## A basic slide setup
+
+``` yaml
+---
+title: "My Presentation"
+author: "Spencer Conway"
+format:
+  revealjs:
+    theme: simple
+    transition: fade
+    slide-number: true
+    menu: true
+---
+```
+
+## Organizing slide content
+
+::: incremental
+-   **Incremental lists** reveal points one at a time.
+-   Footnotes and side notes add supporting details.
+-   Code settings control whether code and output appear.
+-   Scrolling helps when a code block is too long for a slide.
+:::
+
+## Tools for presenting
+
+| Feature | How it helps |
+|------------------------------------|------------------------------------|
+| Navigation menu and overview | Jump to another slide during a discussion. |
+| Zoom | Focus on a small detail in a chart or image. |
+| Speaker notes | Keep talking points available while presenting. |
+| Chalkboard | Draw or annotate slides during a presentation. |
+
+## Sharing the presentation
+
+-   **Quarto Pub** provides a way to publish slides online.
+-   An HTML version lets people open the presentation in a browser.
+-   **Multiplex** can synchronize the audience's slides with the presenter's slides.
+-   Multiplex requires additional setup for a live session.
+
+## Customizing the design
+
+-   Built-in themes give the slides a starting style.
+-   **SCSS** files can change fonts, colors, and headings.
+-   Sass variables help apply the same styling across the deck.
+-   Multiple SCSS files can add or override style settings.
+
+## How I could use this for RKR
+
+-   Present the Instagram content review in a clear slide format.
+-   Show charts comparing results by post format or content topic.
+-   Use speaker notes to explain the measures and proposed next steps.
+-   Update the presentation as new project data becomes available.
+
+## Main takeaway
+
+Quarto gives me a way to keep presentation content, design settings, and analysis together.
+
+For a class project, I would start with a simple theme and add features as needed.
+
+::: small
+Workshop content: the CCIDM workshop summary provided for this presentation.
+
+Technical reference: [Quarto Reveal.js documentation](https://quarto.org/docs/presentations/revealjs/).
+:::
