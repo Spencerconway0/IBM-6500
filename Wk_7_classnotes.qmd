@@ -1,0 +1,37 @@
+---
+title: "WK 7 Notes"
+format: html
+editor: visual
+---
+
+## Overview of Week 07 and More
+
+-   Cep Aissngments propr to week 9
+
+-   CEP assignments for GA4 DAta proir to week 9
+
+## Week 7 Topics and Assignments 
+
+#### **Data Collection and Analysis**
+
+-   The main CEP goal this semester is to collect data.
+
+-   We will start with basic analysis, then learn regression and structural equation modeling.
+
+-   We can start with partial data and rerun the R code when we have all the data.
+
+-   If our team’s data is not ready, we can use the professor’s practice data.
+
+    #### **GitHub Publishing**
+
+-   We can publish using `index.html` or link directly to a specific HTML file.
+
+-   Linking to individual HTML files lets us have multiple pages in one repository.
+
+-   Jung demonstrate how to do this.
+
+    #### Survey
+
+-   Talked about different factors that go into releveacne of a survey.
+
+-   Show old example of coffee shop
