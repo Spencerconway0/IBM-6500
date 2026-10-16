@@ -1,0 +1,70 @@
+---
+title: "Class Notes for October 15"
+author: "Spencer Conway"
+date: "2026-10-15"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 1
+    toc-location: right
+    embed-resources: true
+---
+
+# Introduction
+
+We just talked about QMD formatting and how to deploy our HTML. Pretty much for the first hour\
+
+## Publishing Quarto Pages
+
+We went over a few different ways to publish Quarto work. The method depends on whether we are publishing one page or creating a website with several pages.
+
+-   **Quarto publish:** Publishes one page using the terminal. It does not need a `_quarto.yml` file. To update it, run the publishing command again.
+-   **Render + Settings:** Another way to publish one page without using the terminal. Updates require rendering the file, committing, and pushing. The URL includes the file name unless it is named `index.html`.
+-   **Loose pages:** Publishes several separate pages without a `_quarto.yml` file. Each page has its own URL with the file name. Updates require rendering, committing, and pushing.
+-   **Website + Quarto publish:** Creates a website with several pages connected through a menu. It needs a `_quarto.yml` file and uses the terminal to publish.
+-   **Website + /docs:** Also creates a website with several pages and needs a `_quarto.yml` file. The rendered website is stored in the `docs` folder. Updates require rendering, committing, and pushing.
+
+### Main Takeaways
+
+-   A single page does not require the same setup as a full website.
+-   `_quarto.yml` contains settings for a Quarto website project.
+-   Naming the homepage `index.html` lets visitors open it without adding the file name to the end of the website address.
+-   For a portfolio website, we would use one of the two website methods.
+-   Saving changes to a QMD file does not automatically update the published page. We also need to follow the update steps for our publishing method.
+
+# Survey Design and Data
+
+-   We walked through an example survey and discussed how it was designed.
+-   The introduction should explain what the survey is about and what participants can expect.
+-   Include consent information and explain whether participation is voluntary.
+-   Questions should be clear and easy to understand. Avoid wording that pushes people toward a certain answer.
+-   The order of questions matters and should make the survey easy to follow.
+-   Answer choices should cover the possible responses without being confusing.
+-   Include instructions asking participants to answer honestly and take the survey seriously. If they are not willing to do that, they should exit the survey.
+-   Thoughtful responses are important because careless answers can affect the quality of the data.
+-   Test the survey before sharing it to check the wording, question flow, and any skip logic.
+
+# IRB
+
+-   IRB stands for Institutional Review Board. It reviews research involving human participants.
+-   The first step is checking whether the project needs IRB review using CPP’s determination survey.
+-   Researchers must complete the required CITI training.
+-   CPP uses Cayuse to submit and manage IRB applications. First-time users need to request access.
+-   The application explains the research plan and includes materials such as the survey and consent documents.
+-   If IRB review is required, recruitment and research cannot begin until approval is issued.
+-   Researchers cannot decide on their own that a study is exempt. The IRB makes that determination.
+-   Changes to an approved survey, consent form, or research plan require a modification submission.
+-   Plan ahead because review can take several weeks, depending on the study and needed revisions.
+
+## Application Steps
+
+1.  Check whether IRB review is needed.
+2.  Complete CITI training.
+3.  Request access to Cayuse.
+4.  Learn how to use Cayuse and submit the protocol.
+5.  Keep the protocol updated and submit a closure when finished.
+
+# Presentation
+
+He didnt talk about presentation at all or Chapter 3
