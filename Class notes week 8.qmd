@@ -67,4 +67,6 @@ We went over a few different ways to publish Quarto work. The method depends on 
 
 # Presentation
 
-He didnt talk about presentation at all or Chapter 3
+He didnt talk about presentation at all or Chapter 3\
+\
+<https://spencerconway0.github.io/IBM-6500/Class%20notes%20week%208.html>
