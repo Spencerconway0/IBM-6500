@@ -1,0 +1,34 @@
+---
+title: "GP Peer Evaluation Form"
+author: "Spencer Conway"
+format:
+  html:
+    toc: false
+    embed-resources: true
+---
+
+## Group Member Evaluation
+
+Please evaluate your group members, including yourself, from 1 to 100%. A rating of 100% indicates that the member completed their expected share of the project. One member may be identified as MVP for contributing above and beyond expectations.
+
+| Member Name | Grade (%) | MVP |
+|---|---:|:---:|
+| Spencer Conway | 100 |  |
+| Luis Ahumada | 100 |  |
+| Carmen Lia Jimenez | 100 |  |
+| Georgia Monjarrez | 100 |  |
+| Leeann Lewis-Waddel | 100 | **✓** |
+
+## Comments on Contributions
+
+**Spencer Conway:** I completed my assigned work throughout the quarter, contributed to group discussions and meetings, and stayed involved in completing the project deliverables.
+
+**Luis Ahumada:** Luis consistently completed his assigned work and contributed to the group throughout the quarter. He was dependable and did his part to help keep the project moving forward.
+
+**Carmen Lia Jimenez:** Carmen consistently contributed to the project and completed the work she was responsible for. She communicated well with the group and was a reliable team member.
+
+**Georgia Monjarrez:** Georgia completed her assigned responsibilities and contributed throughout the quarter. She worked well with the group and helped us continue making progress on the project.
+
+**Leeann Lewis-Waddel:** Leeann consistently contributed to the project and often went above and beyond what was expected. She helped lead the group, kept us organized, and made sure everyone stayed on the same page. I selected Leeann as my MVP because her leadership helped keep the group moving in the right direction.
+
+Overall, my group has been great to work with. Everyone contributed, communicated well, and completed their responsibilities. I really enjoyed working with this group and would be happy to work with them again.
