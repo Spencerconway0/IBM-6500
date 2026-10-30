@@ -1,0 +1,51 @@
+---
+title: "Class Notes for October 29"
+author: "Spencer Conway"
+date: "2026-10-29"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 1
+    toc-location: right
+    embed-resources: true
+---
+
+# Introduction
+
+We had a guest speaker, Travis Miller, who talked about careers in market research and insights. After that, we went over assignments and what we need to improve from our presentations.
+
+# Guest Speaker: Travis Miller
+
+- Travis is the Senior Vice President of Sales and Client Development at PureSpectrum.
+- He also serves as the volunteer president of the Insights Association West Chapter.
+- He has nearly 20 years of experience in market research and insights.
+- He started gaining experience through a research project while attending CSU Channel Islands.
+
+## Market Research and Insights Career Paths
+
+- Market research and insights have many different career opportunities.
+- Technology has changed the types of jobs available and will continue to change the industry.
+- Getting started involves a lot of on-the-job learning.
+- Classes in statistics, business, analytics, writing, and consumer behavior can help prepare us.
+- Outside of class, it helps to follow current events, technology, and consumer trends.
+- The main idea is to find a problem, collect data, and use it to provide answers.
+
+# Class Assignments
+
+## Excluded Assignments
+
+We went over the assignments listed under Excluded Assignments.
+
+- CEP02 through CEP08 were listed.
+- Several team GA4 assignments were also listed, including the Analytics Blueprint, Tracking QA Log, BigQuery queries, and Analytics Mart.
+
+## Assignment 10-2
+
+We also went over assignment 10-2 in class.
+
+# Presentation Improvements
+
+- We need to review the feedback from our presentation.
+- As a group, we need to make a list of things to fix.
+- We should go over that list with our faculty lead and decide on the next steps.
