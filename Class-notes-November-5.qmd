@@ -15,6 +15,13 @@ format:
 
 - A frequency table shows how often each response occurs. A cross-tab shows counts for combinations of two categorical variables.
 
+# Scales of Measurement
+
+- **Nominal:** Categories with no order, like favorite restaurant.
+- **Ordinal:** Categories with an order, like low, medium, and high satisfaction.
+- **Interval:** Equal gaps between values, but no true zero, like temperature in Fahrenheit.
+- **Ratio:** Equal gaps and a true zero, like dollars spent.
+
 # Hypothesis Testing
 
 - We went over how to choose a test and write the null and alternative hypotheses. The alternative tells us whether the test is one-tailed or two-tailed.
@@ -25,8 +32,16 @@ format:
 - Descriptive stats summarize the data we collected.
 - A one-sample t-test compares a sample mean to a specific value. A chi-square goodness-of-fit test compares observed counts to expected counts.
 
+# Slides 23–26
+
+- **23. Choosing a hypothesis test.** Look at the type of data, how many samples there are, and whether the samples are independent or paired. A before-and-after test on the same people is paired.
+- **24. Comparing methods.** For a numeric outcome, a t-test can compare two groups. ANOVA compares means across groups, ANCOVA also adjusts for another variable, and regression can show how a numeric predictor relates to the outcome.
+- **25. Multivariate techniques.** Dependence methods like regression start with an outcome. Interdependence methods look for patterns, like related variables in factor analysis or similar cases in cluster analysis.
+- **26. Data prep recap.** Check and edit responses, code them, and clean up missing or inconsistent values before picking an analysis.
+
 # Assignments
 
+- He walked us through a couple of assignments and clarified what we need to do for the individual Case 31 assignments and for data preparation.
 - Chapter 16 quiz is due November 5.
 - IC11-2, Case 31 is due November 8. Summarize the analysis for R1, R2, R5, and R6.
 
