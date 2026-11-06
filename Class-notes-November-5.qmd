@@ -1,0 +1,33 @@
+---
+title: "Class Notes for November 5"
+author: "Spencer Conway"
+date: "2026-11-05"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 1
+    toc-location: right
+    embed-resources: true
+---
+
+# Frequency Distributions and Cross-Tabs
+
+- A frequency table shows how often each response occurs. A cross-tab shows counts for combinations of two categorical variables.
+
+# Hypothesis Testing
+
+- We went over how to choose a test and write the null and alternative hypotheses. The alternative tells us whether the test is one-tailed or two-tailed.
+- Use the test statistic to find the p-value, then compare it to the significance level to decide whether to reject the null.
+
+# Descriptive and Inferential Statistics
+
+- Descriptive stats summarize the data we collected.
+- A one-sample t-test compares a sample mean to a specific value. A chi-square goodness-of-fit test compares observed counts to expected counts.
+
+# Assignments
+
+- Chapter 16 quiz is due November 5.
+- IC11-2, Case 31 is due November 8. Summarize the analysis for R1, R2, R5, and R6.
+
+[Published November 5 Class Notes](https://spencerconway0.github.io/IBM-6500/Class-notes-November-5.html)
