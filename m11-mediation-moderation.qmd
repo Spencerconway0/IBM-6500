@@ -1,0 +1,82 @@
+---
+title: "M11 Article Reading and Summary: Mediation and Moderation"
+subtitle: "Baron and Kenny (1986)"
+author: "Spencer Conway"
+date: "2026-11-12"
+format:
+  html:
+    toc: true
+    number-sections: true
+    embed-resources: true
+    theme: pandoc
+    html-math-method: mathml
+---
+
+# Main idea
+
+Baron and Kenny explain two ways a third variable can help us understand the relationship between a predictor and an outcome. A **moderator** tells me when, or for whom, the relationship changes. A **mediator** describes a process that could explain how the predictor affects the outcome. The role depends on the research question and the proposed order of events (Baron & Kenny, 1986, pp. 1173–1174, 1176–1178).
+
+| Question I want to answer | Role of the third variable | What to estimate |
+|---|---|---|
+| Does the relationship between $X$ and $Y$ change across levels of $Z$? | $Z$ is a moderator. | The interaction $X \times Z$. |
+| Does $X$ change $M$, which then helps explain a change in $Y$? | $M$ is a mediator. | The indirect effect $ab$. |
+
+# Moderation
+
+A moderator can change the strength or direction of the relationship between $X$ and $Y$. One example in the article is the noise experiment by Glass and Singer. Higher noise intensity hurt task performance when noise arrived without a signal. Whether noise onset was signaled changed the effect of intensity on performance (Baron & Kenny, 1986, p. 1174).
+
+In a linear regression, I include the predictor, the moderator, and their product:
+
+$$
+Y = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3 XZ + \varepsilon
+$$
+
+The slope of $X$ at a given $Z$ is $\beta_1 + \beta_3 Z$. If $Z$ is coded 0 or 1, the two slopes are $\beta_1$ and $\beta_1+\beta_3$. The interaction coefficient $\beta_3$ tests the difference between those slopes. I would test that difference directly before interpreting the individual slopes (Baron & Kenny, 1986, pp. 1174–1176).
+
+| Predictor $X$ | Moderator $Z$ | Analysis from the article |
+|---|---|---|
+| Binary | Binary | Test the interaction in a $2 \times 2$ ANOVA. |
+| Continuous | Binary | Compare unstandardized regression slopes across groups. Group correlations can differ when the range of $X$ differs. |
+| Binary | Continuous | Use a product term if the effect changes linearly across $Z$. A quadratic pattern can be tested by adding $Z^2$ and $XZ^2$. |
+| Continuous | Continuous | Use the product-term approach for a linear change in the slope. Match any more complex terms to the expected pattern. |
+
+# Mediation
+
+A mediator sits in the proposed sequence $X \rightarrow M \rightarrow Y$. The article connects this idea to stimulus–organism–response. A stimulus can change an internal state, which can then affect a behavioral response (Baron & Kenny, 1986, pp. 1176–1177).
+
+## The original regression steps
+
+| Model | Path | What it measures |
+|---|---|---|
+| Regress $M$ on $X$. | $a$ | How much $M$ changes with $X$. |
+| Regress $Y$ on $X$. | $c$ | The total effect of $X$ on $Y$. |
+| Regress $Y$ on both $X$ and $M$. | $b$ and $c'$ | The association between $M$ and $Y$ given $X$, and the remaining direct effect of $X$ given $M$. |
+
+Baron and Kenny’s procedure looked for evidence on paths $a$, $c$, and $b$, plus a reduction in the coefficient for $X$ when $M$ was added. They described a remaining coefficient of zero as perfect mediation. In the simple linear model without an $X \times M$ interaction, the indirect effect is $ab$, and $c = c' + ab$. The article also discusses Sobel’s approximate test for $ab$ (Baron & Kenny, 1986, pp. 1176–1177).
+
+## What I would check today
+
+I would estimate $ab$ directly and report a bootstrap confidence interval. An indirect effect can exist even when the total effect is small, for example when the indirect and direct effects run in opposite directions. A large p-value for $c'$ can reflect low precision, so I would look at the estimate and its interval before making any claim about the remaining direct effect (Hayes, 2009).
+
+Timing and measurement matter for interpretation. A noisy mediator can make path $b$ look weaker and leave a larger apparent direct effect. Feedback from $Y$ to $M$ can also undermine the proposed order. Measuring $X$, then $M$, then $Y$ helps establish the sequence, and a causal interpretation still depends on the design and how well it addresses confounding (Baron & Kenny, 1986, p. 1177; Hayes, 2009).
+
+# When a study includes both
+
+In the article’s stress example, the authors distinguish **experimentally assigned control** from **how much control participants feel**. Assigned control could change how strongly a stressor affects the outcome. Perceived control could also help explain how a stressor affects that outcome, if the stressor changes perceived control first. The authors then ask whether the interaction between the stressor and perceived control helps account for the original interaction between the stressor and assigned control (Baron & Kenny, 1986, pp. 1178–1180).
+
+# Example for the Restaurant at Kellogg Ranch
+
+Suppose I randomly show viewers either a finished-dish photo or a behind-the-scenes kitchen photo and measure whether they click a reservation link.
+
+- **Mediation question.** Does the finished-dish photo increase expected food quality, which in turn makes a reservation click more likely? I would measure expected food quality after the photo and before the click opportunity.
+- **Moderation question.** Does the effect of photo type on reservation clicks differ between people who have dined at RKR and people who have never visited? I would record prior visit status before showing the photo and test the interaction between photo type and prior visit status.
+
+# References
+
+- Baron, R. M., & Kenny, D. A. (1986). The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations. *Journal of Personality and Social Psychology, 51*(6), 1173–1182. [Article DOI](https://doi.org/10.1037/0022-3514.51.6.1173) · [Full-text PDF](https://www2.psych.ubc.ca/~schaller/528Readings/BaronKenny1986.pdf)
+- Hayes, A. F. (2009). Beyond Baron and Kenny: Statistical mediation analysis in the new millennium. *Communication Monographs, 76*(4), 408–420. [Article DOI](https://doi.org/10.1080/03637750903310360)
+
+# Appendix
+
+- [GitHub repository](https://github.com/Spencerconway0/IBM-6500)
+- [GitHub Pages report](https://spencerconway0.github.io/IBM-6500/m11-mediation-moderation.html)
