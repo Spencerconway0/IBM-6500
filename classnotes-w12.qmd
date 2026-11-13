@@ -1,0 +1,44 @@
+# Testing Hypothesis (Cont'd)
+
+# EFA (Exploratory Factor Analysis) & PCA (Principal Component Analysis)
+
+## W12-1
+
+- PCA & EFA
+- Reliability
+- Case 31 - Reliability & Factor Analysis for R3 & R6
+    - R3: Attitude toward Employee Proficiency
+    - R6: Attitude toward Credit Unions' Operational Efficiency
+- Unidimensional & Reliable --> Composite index
+
+## W12-2: Hypothesis Testing
+
+- t-tests
+    - One-group t-test
+    - two-groups t-test
+    - paired group t-test
+- ANOVA
+- R3, R6, and R4
+- H1, H2
+
+### Case 31 slide review
+
+- We spent a good part of class reviewing the Case 31 analysis slides and talking through why we use different tests for different research questions.
+- **R3 (employee proficiency):** Q3–Q6 were combined into one score after checking that the items measured the same thing and worked reliably together. The average was 4.21, which was significantly above 4 in the one-sample t-test.
+- **R4 (near headquarters vs. elsewhere):** We used an independent-samples t-test to compare employee proficiency scores across the two groups. For service awareness, we used cross-tabs and a chi-square test of independence.
+- **R6 (operational effectiveness):** The test depended on the type of response. Chi-square goodness-of-fit was used for counts, and a one-sample t-test was used for ratings.
+- **H1 and H2:** H1 used one-way ANOVA to compare how members rated the adequacy of financial services across awareness groups. H2 used a paired t-test because the same members answered both loan-rate questions.
+
+[Case 31 analysis slides](https://jaejungca.github.io/case31/Jung_Jae_case31_analysis_present-all.html#/12/3)
+
+## W12-3: Regression
+- step 1: Regression - Ch18
+- Step 2: Regression - Assumptions-IBM 6510
+- H5a-H5d: Same DV, different IV's
+- In Case 31, the outcome was the overall rating of operational efficiency. The predictors were confidentiality, speed of loan processing, how well services met members' needs, and ease of applying for a loan.
+
+# CFA (Confirmatory Factor Analysis)
+
+- W12-4: SEM Overview using My Research
+- W12-5: Convergent & Discriminant Validity, & CMB
+- Assignment: Note taking for CMB article
