@@ -1,0 +1,193 @@
+---
+title: "IC11-2 Case 31"
+subtitle: "Summary of Data Analysis for R1, R2, R5, and R6"
+author: "Spencer Conway"
+format:
+  revealjs:
+    theme: serif
+    embed-resources: true
+    html-math-method: plain
+    slide-number: true
+    menu: false
+    transition: none
+    width: 1280
+    height: 800
+    center: false
+    hash: true
+    include-in-header:
+      text: |
+        <style>
+        .reveal {font: 30px/1.4 Arial, sans-serif; color: #222; background: #fff;}
+        .reveal .slides {text-align: left;}
+        .reveal h1 {font-size: 2em;}
+        .reveal table {border-collapse: collapse; width: 100%;}
+        .reveal table th {border-bottom: 1px solid #777;}
+        .reveal table td {border-bottom: 1px solid #ddd;}
+        .reveal h2 {font-size: 1.45em;}
+        .reveal table {font-size: 0.74em; margin: 0.55em auto;}
+        .reveal table th, .reveal table td {padding: 0.26em 0.42em;}
+        .reveal pre code {max-height: 550px;}
+        </style>
+---
+
+## How I analyzed the survey
+
+- I used the instructor’s public prepared SPSS file and checked the variables against the coding from my Module 10 work. The file contains 128 rows. The case narrative reports 123 usable questionnaires, so I report the valid sample size for each item based on the file.
+- I excluded missing responses item by item. All percentages use valid responses as the denominator.
+- I used two-sided one-sample t-tests for ratings and chi-square goodness-of-fit tests for category counts. I used .05 as the significance level. The slide tables show unadjusted p-values.
+
+## R1 | Why do members join?
+
+The dataset does not contain Q2, which asks directly why members joined. I used the savings rate rating (Q7r) to see whether members viewed it as above or below average.
+
+| Response | Count (% of valid) |
+| --- | --- |
+| Very low | 1 (0.8%) |
+| Low | 12 (10.2%) |
+| Average | 83 (70.3%) |
+| High | 22 (18.6%) |
+| Very high | 0 (0.0%) |
+
+| Item | Valid n | Mean | SD | 95% CI | t | p |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q7r Savings rate | 118 | 3.07 | 0.57 | 2.96–3.17 | 1.30 | .196 |
+
+**What I found.** 70.3% of valid respondents rated savings rates as average. The mean of 3.07 was close to the benchmark of 3 (Average), with p = .196. The survey file does not establish whether savings rates were a reason for joining.
+
+## R2 | Why do members borrow elsewhere?
+
+Q28 and Q29, the questions about outside borrowing and reasons, are absent from the file. I used the EFCU borrowing rate rating (Q8r) and agreement that EFCU offered lower rates than other lenders (Q30).
+
+| Item | 1 | 2 | 3 | 4 | 5 |
+| --- | --- | --- | --- | --- | --- |
+| Q8r Borrowing rate | 1 (0.9%) | 17 (15.9%) | 59 (55.1%) | 26 (24.3%) | 4 (3.7%) |
+| Q30 EFCU rates are lower | 4 (3.1%) | 27 (21.1%) | 59 (46.1%) | 33 (25.8%) | 5 (3.9%) |
+
+Q8r ranges from Very low to Very high. Q30 ranges from Strongly disagree to Strongly agree. A 3 means Average for Q8r and Uncertain for Q30.
+
+| Item | Valid n | Mean | SD | 95% CI | t | p |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q8r Borrowing rate | 107 | 3.14 | 0.76 | 2.99–3.29 | 1.91 | .058 |
+| Q30 EFCU rates are lower | 128 | 3.06 | 0.87 | 2.91–3.21 | 0.82 | .416 |
+
+**What I found.** Average was the most common rate rating (55.1%), and Uncertain was the most common answer about whether EFCU’s rates were lower (46.1%). Neither mean differed significantly from 3 at the .05 level.
+
+## R5 | Awareness of accounts, cards, and signature loans
+
+Each service had 128 valid responses. Total awareness combines the two groups that knew about the service.
+
+| Service | Unaware | Aware, never used | Aware, used | Total aware | χ² | p |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q13 Regular share account | 64.8% | 25.0% | 10.2% | 35.2% | 61.42 | < .001 |
+| Q14 Special subaccounts | 35.9% | 54.7% | 9.4% | 64.1% | 39.81 | < .001 |
+| Q15 Christmas club account | 32.8% | 58.6% | 8.6% | 67.2% | 48.02 | < .001 |
+| Q16 IRA | 27.3% | 50.0% | 22.7% | 72.7% | 16.42 | < .001 |
+| Q17 Master credit card | 11.7% | 44.5% | 43.8% | 88.3% | 26.92 | < .001 |
+| Q18 Signature loans | 3.9% | 81.2% | 14.8% | 96.1% | 134.55 | < .001 |
+
+Each chi-square test compares the three response counts with an equal split (one-third each, df = 2). The regular share account had the lowest total awareness (35.2%).
+
+## R5 | Awareness of the other loan services
+
+| Service | Unaware | Aware, never used | Aware, used | Total aware | χ² | p |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q19 New car loans | 3.9% | 77.3% | 18.8% | 96.1% | 115.80 | < .001 |
+| Q20 Late-model car loans | 9.4% | 79.7% | 10.9% | 90.6% | 123.81 | < .001 |
+| Q21 Older-model car loans | 25.8% | 64.8% | 9.4% | 74.2% | 62.36 | < .001 |
+| Q22 Household goods loans | 28.9% | 62.5% | 8.6% | 71.1% | 56.92 | < .001 |
+| Q23 Recreational loans | 43.0% | 46.9% | 10.2% | 57.0% | 31.23 | < .001 |
+| Q24 Share collateralized loans | 53.9% | 44.5% | 1.6% | 46.1% | 59.83 | < .001 |
+| Q25 IRA loans | 60.9% | 35.9% | 3.1% | 39.1% | 64.56 | < .001 |
+| Q26 Line of credit loans | 0.0% | 62.5% | 37.5% | 100.0% | 76.00 | < .001 |
+
+Every service differed from the equal-thirds benchmark (all p < .001). The most common category for **11 of 14 services** was aware but never used. Line of credit loans had the highest awareness (100%), and the Master credit card had the highest reported use (43.8%).
+
+## R6 | Account statements and confidentiality
+
+| Item | Responses, n (% of valid) | Valid n | Goodness-of-fit test |
+| --- | --- | --- | --- |
+| Q9r Statement frequency | About right 99 (77.3%), not often enough 29 (22.7%), other options 0 | 128 | χ²(4) = 287.70, p < .001 |
+| Q11 Statements easy to understand | Yes 125 (97.7%), no 3 (2.3%) | 128 | χ²(1) = 116.28, p < .001 |
+| Q12 Account confidentiality | Yes 74 (69.8%), no 32 (30.2%) | 106 | χ²(1) = 16.64, p < .001 |
+
+I used equal shares as reference distributions for Q9r (20% per option) and Q11–Q12 (50% per option). Those are comparison points for the tests. Q12 had 22 nonresponses.
+
+## R6 | Statement accuracy and overall rating
+
+| Item | Response distribution, n (% of valid) |
+| --- | --- |
+| Q10r Statement accuracy | Poor 2 (1.6%), fair 4 (3.1%), good 54 (42.2%), excellent 68 (53.1%) |
+| Q37r Overall operations | Very poor 1 (0.8%), poor 2 (1.7%), average 16 (13.2%), good 71 (58.7%), excellent 31 (25.6%) |
+
+| Item | Valid n | Mean | SD | 95% CI | t | p |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q10r Statement accuracy | 128 | 3.47 | 0.64 | 3.36–3.58 | 8.30 | < .001 |
+| Q37r Overall operations rating | 121 | 4.07 | 0.73 | 3.94–4.20 | 16.12 | < .001 |
+
+**What I found.** Statement accuracy averaged 3.47 on a four-point scale, above the benchmark of 3 (Good). Overall operations averaged 4.07 on a five-point scale, above the benchmark of 3 (Average). Of those who gave an overall rating, 84.3% rated operations good or excellent.
+
+## R6 | How members rated specific operations
+
+| Item | Strongly disagree | Disagree | Uncertain | Agree | Strongly agree |
+| --- | --- | --- | --- | --- | --- |
+| Q31 Staff keep information confidential | 1 (0.8%) | 0 (0.0%) | 27 (21.1%) | 77 (60.2%) | 23 (18.0%) |
+| Q32 Loan applications processed promptly | 0 (0.0%) | 6 (4.7%) | 45 (35.2%) | 56 (43.8%) | 21 (16.4%) |
+| Q33 Services meet members’ needs | 0 (0.0%) | 7 (5.5%) | 45 (35.2%) | 69 (53.9%) | 7 (5.5%) |
+| Q34 Loan applications are easy | 2 (1.6%) | 14 (10.9%) | 38 (29.7%) | 71 (55.5%) | 3 (2.3%) |
+
+| Item | Valid n | Mean | SD | 95% CI | t | p |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q31 Staff keep information confidential | 128 | 3.95 | 0.68 | 3.83–4.06 | 15.74 | < .001 |
+| Q32 Loan applications processed promptly | 128 | 3.72 | 0.79 | 3.58–3.86 | 10.25 | < .001 |
+| Q33 Services meet members’ needs | 128 | 3.59 | 0.68 | 3.47–3.71 | 9.87 | < .001 |
+| Q34 Loan applications are easy | 128 | 3.46 | 0.78 | 3.32–3.60 | 6.66 | < .001 |
+
+All four means were above 3 (Uncertain). Staff confidentiality had the highest mean (3.95). Ease of loan applications had the lowest mean (3.46) and the largest share who disagreed or strongly disagreed (12.5%).
+
+## What stood out to me
+
+- Members mostly saw the savings and borrowing rates as average. The available rate ratings leave the actual reasons for joining and borrowing elsewhere open.
+- Several services, especially line of credit loans, had high awareness even though many members had never used them. The regular share account and IRA loans were among the least familiar.
+- Members generally rated statements and overall operations well. Ease of applying for a loan was the lowest-rated of the four operations statements.
+
+## Appendix | How to reproduce the tests {.scrollable}
+
+Download the prepared SPSS file from the instructor’s repository and place it beside the QMD. This R code shows the counts, percentages, and tests used for the slides.
+
+```r
+d <- haven::read_sav("Case 31 Data_efcu_Prepped.sav")
+d$q12[d$q12 == 3 & !is.na(d$q12)] <- NA
+
+response_counts <- function(item, choices) {
+  table(factor(as.numeric(d[[item]]), levels = seq_len(choices)))
+}
+
+rating_items <- c("q7r", "q8r", "q30", "q10r", "q31", "q32",
+                  "q33", "q34", "q37r")
+names(rating_items) <- rating_items
+lapply(rating_items, function(item) {
+  x <- as.numeric(d[[item]])
+  choices <- if (item == "q10r") 4 else 5
+  n <- response_counts(item, choices)
+  list(n = sum(n), sd = sd(x, na.rm = TRUE),
+       counts = n, percentages = 100 * prop.table(n),
+       test = t.test(x, mu = 3))
+})
+
+service_items <- paste0("q", 13:26, "r")
+category_items <- c(setNames(rep(3, 14), service_items),
+                    q9r = 5, q11 = 2, q12 = 2)
+lapply(names(category_items), function(item) {
+  n <- response_counts(item, category_items[[item]])
+  list(item = item, counts = n, percentages = 100 * prop.table(n),
+       test = chisq.test(n))
+})
+```
+
+## Appendix | Files and sources
+
+- [GitHub repository](https://github.com/Spencerconway0/IBM-6500)
+- [GitHub Pages presentation](https://spencerconway0.github.io/IBM-6500/ic11-2-case-31.html)
+- [My Module 10 data preparation report](https://spencerconway0.github.io/IBM-6500/ic10-2-1-case-31.html)
+- [Jae Min Jung’s Case 31 narrative, questionnaire, and prepared SPSS data](https://github.com/jaejungca/case31)
+- [Instructor’s Case 31 analysis example](https://jaejungca.github.io/case31/Jung_Jae_case31_analysis_present-all.html)
