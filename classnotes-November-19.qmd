@@ -1,0 +1,35 @@
+---
+title: "Class Notes for November 19"
+author: "Spencer Conway"
+date: "2026-11-19"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 1
+    toc-location: right
+    embed-resources: true
+---
+
+# Overview of Weeks 13–15
+
+- We started with an overview of the remaining weeks and upcoming coursework.
+- We talked about what we still need to finish and prepare before the end of the semester.
+
+# Qualtrics Assignment
+
+- He went over the Qualtrics assignment and clarified what we need to do.
+- This part of class helped explain the assignment expectations and gave us a chance to ask questions.
+
+# Presentations
+
+- We also talked about preparing for our upcoming presentations.
+- We need to organize our material so the audience can follow the project and understand the main points.
+
+# SEM
+
+- SEM stands for structural equation modeling.
+- It looks at relationships among several variables in one model.
+- The measurement model looks at how survey questions measure concepts, such as satisfaction.
+- The structural model looks at the proposed relationships between those concepts.
+- This connects to CFA because we need to check our measures before interpreting the relationships.
